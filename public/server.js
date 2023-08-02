@@ -1,16 +1,28 @@
-const express = require("express");
-const path = require("path");
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 3001;
+const PORT = 3001;
 
-app.use(exress.json());
-app.use(express.urlencoded ());
-app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+app
+.listen(PORT, () => {
+    console.log(
+        `Server listening to http://localhost:${PORT}`
+);
+})
+.catch((err) => {
+    console.log(err); 
+});
 
 
 
-
-app.listen(port, () => console.log(`Server listening on port ${port}!`))
-  .catch((err) => console.log(err));
 
