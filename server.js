@@ -4,10 +4,6 @@ const path = require("path");
 
 const app = express();
 const PORT = 3001;
-// app.use('/api/notes', (req, res, next) => {
-//     console.log(req.body);
-//     next();
-// });
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -31,6 +27,15 @@ app.post("/api/notes", (req, res) => {
   fs.writeFileSync("db/db.json", JSON.stringify(notesList));
 
   res.sendStatus(200);
+});
+app.delete("/api/notes/:id", (req, res) => {
+    const id = req.params.id;
+    const data = fs.readFileSync("db/db.json");
+    const notesList = JSON.parse(data);
+    const newNotesList = notesList.filter((note) => note.id != id);
+    fs.writeFileSync("db/db.json", JSON.stringify(newNotesList));
+    res.sendStatus(200);
+
 });
 
 app.listen(PORT, () => {
