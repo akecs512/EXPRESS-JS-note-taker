@@ -12,3 +12,12 @@ When they click on the Save icon, the new note they have entered is saved and ap
 When they click on an existing note in the list in the left-hand column, then that note appears in the right-hand column.
 When they click on the Write icon in the navigation at the top of the page,then they are presented with empty fields to enter a new note title and the note’s text in the right-hand column.
 
+## Screenshot
+
+
+<img width="1409" alt="Screen Shot 2023-08-07 at 6 31 40 PM" src="https://github.com/akecs512/note-taker-challenge/assets/79340489/eae00ac8-484b-4d52-8a6d-6f8925a0aea0">
+
+## Deployed URL
+
+https://adriennes-note-taker-app-3061299dc485.herokuapp.com/
+
